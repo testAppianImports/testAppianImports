@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS `qckapp_sdwa_main` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+
 ALTER TABLE `qckapp_sdwa_main`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;

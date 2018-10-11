@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><applicationHaul xmlns:a="http://www.appian.com/ae/types/2009">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<applicationHaul xmlns:a="http://www.appian.com/ae/types/2009">
     <versionUuid>_a-0000e17b-86d3-8000-9ba2-011c48011c48_970852</versionUuid>
     <application>
         <name>Sample Dog Walking Application</name>
@@ -279,4 +280,4 @@
     <history>
         <historyInfo versionUuid="_a-0000e17b-86d3-8000-9ba2-011c48011c48_970852"/>
     </history>
-</applicationHaul>
+</applicationHaul><!--updated on 2018-10-11T10:50:26.524-->

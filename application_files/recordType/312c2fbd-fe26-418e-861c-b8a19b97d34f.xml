@@ -107,8 +107,8 @@
       <a:visibilityExpr>=true()</a:visibilityExpr>
       <a:urlStub>summary</a:urlStub>
       <a:headerExpr/>
-      <a:relatedActionCfg>16c2b398-1aae-4e21-a56e-649cae41fbf2</a:relatedActionCfg>
-      <a:relatedActionCfg>679cff74-287d-4b96-9ac2-cb57d7148dfc</a:relatedActionCfg>
+      <a:relatedActionCfg>6bf7d9fc-c0c6-4b3d-ac0a-355fff8b14be</a:relatedActionCfg>
+      <a:relatedActionCfg>d7d24c0b-5b37-4b91-97dc-25326eae7b20</a:relatedActionCfg>
     </a:detailViewCfg>
     <a:relatedActionCfg>
       <a:target a:uuid="9d5b9a9d-78a4-4f8c-b049-8c1f67c7c1bc" xsi:type="a:ProcessModel"/>
@@ -120,7 +120,7 @@
 )</a:contextExpr>
       <a:visibilityExpr>=true()</a:visibilityExpr>
       <a:iconId>f044</a:iconId>
-      <a:refId>16c2b398-1aae-4e21-a56e-649cae41fbf2</a:refId>
+      <a:refId>6bf7d9fc-c0c6-4b3d-ac0a-355fff8b14be</a:refId>
       <a:title>Update Dog</a:title>
       <a:titleSource>STATIC</a:titleSource>
       <a:description>Update this Dog</a:description>
@@ -133,7 +133,7 @@
 }</a:contextExpr>
       <a:visibilityExpr>=true()</a:visibilityExpr>
       <a:iconId>f014</a:iconId>
-      <a:refId>679cff74-287d-4b96-9ac2-cb57d7148dfc</a:refId>
+      <a:refId>d7d24c0b-5b37-4b91-97dc-25326eae7b20</a:refId>
       <a:title>Delete Dog</a:title>
       <a:titleSource>STATIC</a:titleSource>
       <a:description>Delete this record</a:description>

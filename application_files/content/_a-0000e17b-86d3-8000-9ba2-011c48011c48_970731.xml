@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e17b-86d3-8000-9ba2-011c48011c48_970836</versionUuid>
+    <rule>
+        <name>SDWA_DogDashboard</name>
+        <uuid>_a-0000e17b-86d3-8000-9ba2-011c48011c48_970731</uuid>
+        <description>Dashboard interface for the summary view of the Dogs record type [Records]</description>
+        <parentUuid>863c40a5-449b-4e56-b3a7-c0f0e4f4996b</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!record: #"cb7d2f13-8f74-408d-863f-6e0709fdfc1b_GETONERECORD"(ri!id),
+  #"SYSTEM_SYSRULES_dashboardLayout_v1"(
+    contents: {
+      #"_a-0000e17b-86d3-8000-9ba2-011c48011c48_970723"(
+        record: local!record,
+        creating: false,
+        readOnly: true
+      )
+    }
+  )
+)</definition>
+        <namedTypedValue>
+            <name>id</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <metadataExpr></metadataExpr>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e17b-86d3-8000-9ba2-011c48011c48_970836"/>
+    </history>
+</contentHaul>

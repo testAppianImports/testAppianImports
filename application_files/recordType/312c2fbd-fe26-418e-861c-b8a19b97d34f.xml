@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <versionUuid>3f2ff0d1-2efd-445f-8072-bcd9313c7648</versionUuid>
+  <recordType a:uuid="312c2fbd-fe26-418e-861c-b8a19b97d34f" name="Dog">
+    <a:pluralName>Dogs</a:pluralName>
+    <a:description>List of entries in the Sample Dog Walking Application application</a:description>
+    <a:urlStub>xjXFLw</a:urlStub>
+    <a:source
+      a:uuid="a2a69df9-e550-4fa7-895b-536f5a9709ff@_a-0000e17b-86d3-8000-9ba2-011c48011c48_970739" xsi:type="a:DataStoreEntity"/>
+    <a:listViewTemplateExpr>#"SYSTEM_SYSRULES_recordGridLayoutColumns"(
+        emptygridmessage: "No Dogs available",
+        columns: {
+        #"SYSTEM_SYSRULES_gridLayoutColumn"(
+        label: "Title",
+        weight: 7,
+        field: "title",
+        component: #"SYSTEM_SYSRULES_recordGrid_linkField"(
+        links: #"SYSTEM_SYSRULES_recordLink"(
+        label: rf!title,
+        recordType: rp!type,
+        identifier: rp!id
+        )
+        )
+        ),
+        
+        
+        #"SYSTEM_SYSRULES_gridLayoutColumn"(
+        label: "Created By",
+        weight: 4,
+        field: "createdBy",
+        component: #"SYSTEM_SYSRULES_recordGrid_linkField"(
+        links: {
+        #"SYSTEM_SYSRULES_userRecordLink"(
+        label: #"cc2d5a3b-7530-4d25-9ccf-7f58c069c7c8_FORMATNAME"(rf!createdBy),
+        user: rf!createdBy
+        )
+        }
+        )
+        ),
+        #"SYSTEM_SYSRULES_gridLayoutColumn"(
+        label: "Updated On",
+        width: "DISTRIBUTE",
+        weight: 2,
+        field: "updatedOn",
+        align: "RIGHT",
+        component: #"SYSTEM_SYSRULES_recordGrid_textField"(
+        displayvalue: #"_a-0000e17b-86d3-8000-9ba2-011c48011c48_970703"(rf!updatedOn),
+        align: "RIGHT"
+        )
+        )
+        },
+        pageSize: 50,
+        defaultSort: #"SYSTEM_SYSRULES_sortInfo"(
+        field: "updatedOn",
+        ascending: false
+        )
+)</a:listViewTemplateExpr>
+    <a:fieldCfg name="Created By">
+      <a:isSortable>false</a:isSortable>
+      <a:isSearchable>false</a:isSearchable>
+      <a:isFacet>true</a:isFacet>
+      <a:facetType>EXPRESSION</a:facetType>
+      <a:isExclusiveFacet>true</a:isExclusiveFacet>
+      <a:facetExpr>with(
+  local!creators:#"SYSTEM_SYSRULES_queryEntity"(
+    entity: #"7794bec7-7b3f-4f78-8e62-8e9266e86c7d_MAINDSECONSTANT",
+    query: #"SYSTEM_SYSRULES_query"(
+      aggregation: #"SYSTEM_SYSRULES_queryAggregation"(
+        aggregationColumns: {
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "createdBy", isGrouping: true),
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field: "createdBy", alias: "numberCreated", aggregationFunction: "COUNT")
+        }
+      ),
+      pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(1, -1, #"SYSTEM_SYSRULES_sortInfo"("createdBy", true))
+    )
+  ),
+  if(
+    local!creators.totalCount = 0,
+    {},
+    #"SYSTEM_SYSRULES_facet_v1"(
+      name: "Created By",
+      options: #"SYSTEM_SYSRULES_forEach"(
+        items: local!creators,
+        expression: #"SYSTEM_SYSRULES_facetOption"(
+          id: fv!index,
+          name: #"cc2d5a3b-7530-4d25-9ccf-7f58c069c7c8_FORMATNAME"(fv!item.createdBy),
+          filter: #"SYSTEM_SYSRULES_queryFilter"(
+            field: "createdBy",
+            operator: "=",
+            value: fv!item.createdBy
+          ),
+          dataCount: fv!item.numberCreated
+        )
+      )
+    )
+  )
+)</a:facetExpr>
+      <a:sortOrderIndex>0</a:sortOrderIndex>
+      <a:facetOrderIndex>0</a:facetOrderIndex>
+      <a:visibilityExpr/>
+      <a:defaultOptionExpr/>
+      <a:allowMultipleSelections>false</a:allowMultipleSelections>
+    </a:fieldCfg>
+    <a:detailViewCfg>
+      <a:nameExpr>="Summary"</a:nameExpr>
+      <a:uiExpr>#"_a-0000e17b-86d3-8000-9ba2-011c48011c48_970731"(rp!id)</a:uiExpr>
+      <a:visibilityExpr>=true()</a:visibilityExpr>
+      <a:urlStub>summary</a:urlStub>
+      <a:headerExpr/>
+      <a:relatedActionCfg>16c2b398-1aae-4e21-a56e-649cae41fbf2</a:relatedActionCfg>
+      <a:relatedActionCfg>679cff74-287d-4b96-9ac2-cb57d7148dfc</a:relatedActionCfg>
+    </a:detailViewCfg>
+    <a:relatedActionCfg>
+      <a:target a:uuid="9d5b9a9d-78a4-4f8c-b049-8c1f67c7c1bc" xsi:type="a:ProcessModel"/>
+      <a:contextExpr>with(
+  local!record: #"cb7d2f13-8f74-408d-863f-6e0709fdfc1b_GETONERECORD"(rp!id),
+  {
+    record: local!record
+  }
+)</a:contextExpr>
+      <a:visibilityExpr>=true()</a:visibilityExpr>
+      <a:iconId>f044</a:iconId>
+      <a:refId>16c2b398-1aae-4e21-a56e-649cae41fbf2</a:refId>
+      <a:title>Update Dog</a:title>
+      <a:titleSource>STATIC</a:titleSource>
+      <a:description>Update this Dog</a:description>
+      <a:descriptionSource>STATIC</a:descriptionSource>
+    </a:relatedActionCfg>
+    <a:relatedActionCfg>
+      <a:target a:uuid="11da1f15-fa5f-4e52-9bf4-b8fda4ddbb97" xsi:type="a:ProcessModel"/>
+      <a:contextExpr>{
+  record: #"cb7d2f13-8f74-408d-863f-6e0709fdfc1b_GETONERECORD"(rp!id)
+}</a:contextExpr>
+      <a:visibilityExpr>=true()</a:visibilityExpr>
+      <a:iconId>f014</a:iconId>
+      <a:refId>679cff74-287d-4b96-9ac2-cb57d7148dfc</a:refId>
+      <a:title>Delete Dog</a:title>
+      <a:titleSource>STATIC</a:titleSource>
+      <a:description>Delete this record</a:description>
+      <a:descriptionSource>STATIC</a:descriptionSource>
+    </a:relatedActionCfg>
+    <a:isSystem>false</a:isSystem>
+    <a:dataSrcExpr/>
+    <a:facetsListExpr/>
+    <a:titleExpr>rf!title</a:titleExpr>
+    <a:defaultFiltersExpr/>
+    <a:layoutType>GRID</a:layoutType>
+    <a:security>16383</a:security>
+    <a:hideLatestNews>false</a:hideLatestNews>
+    <a:isExportable>true</a:isExportable>
+  </recordType>
+  <roleMap>
+    <role name="record_type_administrator">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000e17b-86bf-8000-9aee-01075c01075c_36607</groupUuid>
+      </groups>
+    </role>
+    <role name="record_type_viewer">
+      <users/>
+      <groups>
+        <groupUuid>_e-0000e17b-86bf-8000-9aee-01075c01075c_36609</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+  <history>
+    <historyInfo versionUuid="3f2ff0d1-2efd-445f-8072-bcd9313c7648"/>
+  </history>
+  <migrationVersion>1</migrationVersion>
+</recordTypeHaul>

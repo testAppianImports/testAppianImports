@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000e17b-86d3-8000-9ba2-011c48011c48_970790</versionUuid>
+    <rule>
+        <name>SDWA_GetDogById</name>
+        <uuid>cb7d2f13-8f74-408d-863f-6e0709fdfc1b_GETONERECORD</uuid>
+        <description>Query that returns a single Dog matching the passed in ID [Data]</description>
+        <parentUuid>863c40a5-449b-4e56-b3a7-c0f0e4f4996b</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>cast(
+  'type!{urn:com:appian:types:SDWA}SDWA_Dog',
+  #"SYSTEM_SYSRULES_queryEntity"(
+    entity: #"7794bec7-7b3f-4f78-8e62-8e9266e86c7d_MAINDSECONSTANT",
+    query: #"SYSTEM_SYSRULES_query"(
+      filter: #"SYSTEM_SYSRULES_queryFilter"(
+        field: "id",
+        operator: "=",
+        value: ri!id
+      ),
+      pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(1, 1)
+    )
+  ).data
+)</definition>
+        <namedTypedValue>
+            <name>id</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000e17b-86d3-8000-9ba2-011c48011c48_970790"/>
+    </history>
+</contentHaul>

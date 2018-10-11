@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<processModelFolderHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_g-0000e17b-86d3-8000-f92f-7f0000014e7a_171</versionUuid>
+    <processModelFolder>
+        <name>SDWA Models</name>
+        <uuid>11f10ade-4ab7-4ae2-bfa6-41be74413b70</uuid>
+        <description>Process models folder for the Sample Dog Walking Application application [Base]</description>
+    </processModelFolder>
+    <roleMap>
+        <role name="ADMIN_OWNER">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e17b-86bf-8000-9aee-01075c01075c_36607</groupUuid>
+            </groups>
+        </role>
+        <role name="EDITOR">
+            <users/>
+            <groups/>
+        </role>
+        <role name="EXPLICIT_NONMEMBER">
+            <users/>
+            <groups/>
+        </role>
+        <role name="VIEWER">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000e17b-86bf-8000-9aee-01075c01075c_36609</groupUuid>
+            </groups>
+        </role>
+        <role name="MANAGER">
+            <users/>
+            <groups/>
+        </role>
+        <role name="INITIATOR">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_g-0000e17b-86d3-8000-f92f-7f0000014e7a_171"/>
+    </history>
+</processModelFolderHaul>
